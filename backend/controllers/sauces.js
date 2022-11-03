@@ -86,7 +86,7 @@ exports.deleteSauce = (req, res, next) => {
         // supprime la sauce dans la BD
         Sauce.deleteOne({ _id: req.params.id })
           .then(() => {
-            res.status(200).json({ message: "Sauce correctement supprimée !" });
+            res.status(200).json({ message: "Sauce supprimée !" });
           })
           .catch((error) => {
             res
