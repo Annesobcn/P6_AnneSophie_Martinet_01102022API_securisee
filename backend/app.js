@@ -31,16 +31,13 @@ mongoose
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Cross-Origin-Resource-Policy", "*");
-  //ajouter les headers mentionnés aux requêtes envoyées vers l'API
   res.setHeader(
     "Acces-Control-Allow-Headers",
     "Origin, X-requested-With, Content, Accept, Content-Type, Authorization"
   );
-  //et envoyer les requ^^tes avec les méthodes requises
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, PATCH, OPTION"
-  );
+  //et envoyer les requêtes avec les méthodes requises
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, PATCH, OPTIONS");
+  res.setHeader( "accept-version", "1" );
   next();
 });
 
