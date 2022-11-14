@@ -35,7 +35,7 @@ exports.login = (req, res, next) => {
     .toString();
   User.findOne({ email: emailCryptoJS })
     .then((user) => {
-      if (!user) { return res.status(401).json({ message: "Utilisateur introuvable!" });}
+      if (!user) { return res.status(401).json({ message: "Paire login/mot de passe incorrecte" });}
       bcrypt.compare(req.body.password, user.password)
         .then((valid) => {
           if (!valid) {

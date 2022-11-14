@@ -19,7 +19,7 @@ exports.createSauce = (req, res, next) => {
   sauce
     .save()
     .then(() => {
-      res.status(201).json({ message: " Sauce enregistrée!" });
+      res.status(201).json({ message: "Sauce enregistrée!" });
     })
     .catch((error) =>
       res.status(400).json({ error: "Problème pour ajouter la sauce!" })
@@ -96,16 +96,6 @@ exports.deleteSauce = (req, res, next) => {
       });
     })
     .catch((error) => res.status(500).json({ error }));
-};
-exports.getOneSauce = (req, res, next) => {
-  // méthose pour de trouver la sauce à ajouter
-  Sauce.findOne({ _id: req.params.id })
-    .then((sauce) => {
-      res.status(200).json(sauce);
-    })
-    .catch((error) => {
-      res.status(404).json({ error: error });
-    });
 };
 
 // Pour de trouver la sauce à ajouter ou voir une sauce
